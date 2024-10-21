@@ -1,0 +1,31 @@
+---
+import { TextSection, TeamCard } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HeroSection from '../../components/sections/heros/HeroSection.astro';
+
+const seo = {
+	title: 'About | AI Solutions for Industries',
+	description: 'Learn more about our company and how we are transforming industries with AI.',
+};
+---
+
+<Layout {seo}>
+	<HeroSection/>
+  <TextSection>
+    <p>
+      Founded with the vision of empowering industries through AI, Vorta is at the forefront of transforming the way businesses operate. Our solutions are designed to enhance decision-making, automate complex processes, and unlock new opportunities for growth.
+    </p>
+    <p>
+      Whether it's predictive analytics for smart manufacturing, AI-driven insights in finance, or personalized healthcare solutions, our team of experts works closely with clients to develop customized AI applications that meet their unique needs. We believe that AI should not only solve problems but also create value, and we are committed to making that a reality for our partners.
+    </p>
+    <p>
+      At Vorta, innovation is in our DNA. We continuously explore new frontiers in AI, collaborating with leading academic institutions and research labs to stay ahead of the curve. Our solutions are built on a foundation of trust, transparency, and ethical AI practices, ensuring that our technology benefits both businesses and society as a whole.
+    </p>
+    <p>
+      As we look to the future, we are excited to continue our journey of transforming industries with AI. Join us as we shape the future of work, redefine business strategies, and unlock new possibilities for growth and innovation. At Vorta, the future is now, and we are here to lead the way.
+    </p>
+  </TextSection>
+  
+  <TeamCard/>
+</Layout>
+

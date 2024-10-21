@@ -1,0 +1,83 @@
+---
+import Container from '../core/Container.astro';
+
+const { narrow } = Astro.props;
+---
+
+<Container narrow={narrow}>  
+  <section class="team__section">
+    <h2>Meet Our Team</h2>
+    <div class="team__profiles">
+      <div class="team__profile">
+        <img src="/assets/images/home/test2.jpg" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>Developer</p>
+      </div>
+      <div class="team__profile">
+        <img src="/assets/images/home/test2.jpg" alt="Team Member 3">
+        <h3>Emily Johnson</h3>
+        <p>Developer</p>
+      </div>
+      <div class="team__profile">
+        <img src="/assets/images/home/test2.jpg" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>Product Manager</p>
+      </div>
+      <div class="team__profile">
+        <img src="/assets/images/home/test2.jpg" alt="Team Member 3">
+        <h3>Emily Johnson</h3>
+        <p>UX Designer</p>
+      </div>
+      <!-- Add more team profiles as needed -->
+    </div>
+  </section>
+</Container>
+
+<style>
+  .team__section {
+    margin: var(--section-margin) auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .team__profiles {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  @media (min-width: 600px) {
+    .team__profiles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .team__profile {
+    text-align: center;
+    max-width: 200px;
+    margin: auto;
+  }
+
+  .team__profile img {
+    width: 200px; /* Set a fixed size for the circle */
+    height: 200px; /* Ensure height matches width */
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Ensures image covers the container */
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .team__profile h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0.2rem;
+  }
+
+  .team__profile p {
+    font-size: 1rem;
+    margin: 0;
+    color: #666;
+  }
+</style>

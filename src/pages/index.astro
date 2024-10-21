@@ -1,0 +1,118 @@
+---
+import { Container, FeatureCard , NewContainer  } from '@components/odyssey-theme';
+
+import Layout from '../layouts/Page.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import ProductTitle from '@components/sections/heros/ProductTitle.astro';
+
+import { Icon } from 'astro-icon/components';
+import {
+	AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+} from '@components/odyssey-theme';
+import TextAndImageHero from '@components/sections/heros/TextAndImageHero.astro';
+
+---
+
+<Layout>
+	<HomeHeroSection />
+
+	<ProductTitle>
+		<div>
+			<h1>All the tools you need.</h1>
+			<p>We have heard the peoples needs. From stratch to a service, we got you covered.</p>
+		</div>
+	</ProductTitle>
+
+	<StickyTextImageSection>
+		<div slot="heading">
+		  </div>
+		<div slot="text-container">
+			<h3>Application Performance Management</h3>
+			<p>
+				Our APM solution offers unparalleled insights into your application's performance, helping you optimize and troubleshoot with ease. Key features include:
+				<ul>
+					<li><strong>Real-Time Performance Monitoring:</strong> Monitor key performance indicators such as response times, throughput, and error rates in real-time.</li>
+					<li><strong>Customizable Dashboards:</strong> Create dashboards tailored to your specific needs to view critical metrics at a glance.</li>
+				</ul>
+				Ensure optimal performance and reliability with our comprehensive APM solution.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product2.png"
+				alt="Application Performance Management"
+				loading="lazy"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<StickyTextImageSection reversed>
+		<div slot="text-container">
+			<h3>Customer Relationship Management</h3>
+			<p>
+				Our CRM platform helps businesses manage and enhance customer relationships. Key features include:
+				<ul>
+					<li><strong>Lead and Opportunity Management:</strong> Track and nurture leads through your sales funnel with robust CRM tools.</li>
+					<li><strong>Integrated Customer Support:</strong> Provide superior customer service with integrated ticketing, live chat, and knowledge base functionalities.</li>
+				</ul>
+				Enhance customer satisfaction and drive sales growth with our feature-rich CRM solution.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product1.png"
+				alt="Customer Relationship Management (CRM)"
+				loading="lazy"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<StickyTextImageSection>
+		<div slot="text-container">
+			<h3>Project Management Platform</h3>
+			<p>
+				Our Project Management Platform streamlines project planning and execution. It features:
+				<ul>
+					<li><strong>Task and Milestone Tracking:</strong> Manage tasks, set milestones, and monitor progress to ensure successful project delivery.</li>
+					<li><strong>Collaborative Workspace:</strong> Enhance team collaboration with shared workspaces, file sharing, and real-time communication tools.</li>
+				</ul>
+				Deliver projects on time and within budget with our robust project management tools.
+			</p>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product3.png"
+				alt="Project Management Platform"
+				loading="lazy"
+			/>
+		</picture>
+	</StickyTextImageSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded
+	/>
+
+	<ThreeColumnTextSection/>
+	
+</Layout>
+
+<style>
+	.feature-card__section {
+		margin: var(--section-margin) auto;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

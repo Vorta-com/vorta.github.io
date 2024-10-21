@@ -1,0 +1,103 @@
+---
+import Container from '../core/Container.astro';
+---
+
+<Container>
+  <section class="testimonials__section">
+    <div class="testimonial">
+      <div class="testimonial__text">
+        <p>
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur, mollitia cumque. Velit."
+        </p>
+        <div class="testimonial__author">
+          <h3>John Doe</h3>
+          <span>CEO, Company</span>
+        </div>
+      </div>
+      <div class="testimonial__image">
+        <img src="public/assets/images/home/test2.jpg" alt="John Doe" />
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial__text">
+        <p>
+          "Another testimonial text goes here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem tempore odio!"
+        </p>
+        <div class="testimonial__author">
+          <h3>Jane Smith</h3>
+          <span>CTO, Another Company</span>
+        </div>
+      </div>
+      <div class="testimonial__image">
+        <img src="public/assets/images/home/test1.jpg" alt="Jane Smith" />
+      </div>
+    </div>
+    <!-- Add more testimonials as needed -->
+  </section>
+</Container>
+
+<style>
+  .testimonials__section {
+    margin: var(--section-margin) auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Limit to two testimonials per row */
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .testimonial {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #ffffff; /* Set card background color to white */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow */
+    text-align: left;
+  }
+  .testimonial__text {
+    flex: 1;
+  }
+  .testimonial__image {
+    margin-left: 1rem;
+    flex-shrink: 0;
+  }
+  .testimonial__image img {
+    border-radius: 50%;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    object-fit: cover;
+  }
+  .testimonial__text p {
+    font-size: 0.9rem; 
+    line-height: 1.4; 
+    color: #555;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .testimonial__author h3 {
+    font-size: 1rem; 
+    font-weight: bold; 
+    color: black;
+    margin: 0.5rem 0;
+  }
+  .testimonial__author span {
+    color: #555;
+  }
+  @media (max-width: 768px) {
+    .testimonials__section {
+      grid-template-columns: 1fr; /* Single column layout on small screens */
+      padding: 2rem;
+    }
+    .testimonial {
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonial__image {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+    .testimonial__image img {
+      width: 60px; /* Adjust size for mobile */
+      height: 60px; /* Adjust size for mobile */
+    }
+  }
+</style>

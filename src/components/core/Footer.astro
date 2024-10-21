@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon/components';
+import Container from '../core/Container.astro';
+import LittleSticksPlug from './LittleSticksPlug.astro';
+
+const { footerSocials, footerLists, copyrightName, background, color, showLittleSticksPlug = true } =
+  Astro.props;
+---
+
+<footer
+  style={background && `--footer-bg:${background}; --footer-color:${color}`}
+>
+  <Container>
+    <div class="footer-grid__container">
+      <div class="footer-brand__container">
+        <slot name="logo" />
+        <p class="footer-copyright">| &copy; {new Date().getFullYear()} {copyrightName}</p>
+      </div>
+    </div>
+  </Container>
+</footer>
+
+<style>
+  footer {
+    min-height: 5vh;
+    background-color: whitesmoke;
+    color: var(--footer-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-grid__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .footer-brand__container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between logo and text */
+  }
+  .footer-brand__container{
+    width: 200px;
+  }
+  .footer-copyright {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-size: var(--font-size-sm);
+  }
+  @media (max-width: 768px) {
+    .footer-grid__container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-brand__container {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 600px) {
+    .footer-grid__container {
+      flex-direction: column;
+    }
+    .footer-brand__container {
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,123 @@
+---
+import { Icon } from 'astro-icon/components';
+import {
+	AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+} from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import TextAndImageHero from '../../components/sections/heros/TextAndImageHero.astro';
+import ProductTitle from '@components/sections/heros/ProductTitle.astro';
+
+const seo = {
+	title: 'GOM - Global Monitorization System | Astro Odyssey Theme',
+	description: 'Discover GOM, the ultimate solution for comprehensive monitoring of your third-party services.',
+};
+---
+
+<!-- <AnnouncementBar
+	text="Check out our latest blog post on effective monitoring strategies!"
+	href="/blog/posts/effective-monitoring-strategies/"
+	slot="announcement-bar"
+/> -->
+
+<Layout {seo}>
+	<TextAndImageHero>
+		<div slot="btns-container">
+			<Button>
+				Explore Features Below<Fragment slot="icon">
+					<Icon name="ic:baseline-chevron-right" />
+				</Fragment>
+			</Button>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/bot.png"
+				alt="GOM Dashboard"
+				id="home-hero-image"
+			/>
+		</picture>
+		<div slot="text-container">
+			<h1>Welcome to VBOT</h1>
+			<p>Effortlessly monitor and manage all your third-party services from a unified dashboard.</p>
+		</div>
+	</TextAndImageHero>
+
+  <ProductTitle >
+		<h2>Key Features of VBOT</h2>
+	</ProductTitle>
+
+	<StickyTextImageSection id="pt">
+		<div slot="text-container">
+			<h3>Real-Time Data Retrieval</h3>
+			<p>
+			  RAG Chatbot integrates real-time data retrieval to enhance response accuracy. By connecting to various external knowledge bases, the chatbot can fetch up-to-date information during conversations, ensuring users get the latest facts and insights. Whether it's pulling information from internal databases or external APIs, the chatbot seamlessly integrates with data sources to enrich its generative capabilities.
+			</p>
+			<p>
+			  This enables the chatbot to provide not only contextually relevant answers but also precise data-backed responses, improving user confidence and operational efficiency.
+			</p>
+		  
+			<h3>Advanced Language Understanding</h3>
+			<p>
+			  Powered by cutting-edge language models, RAG Chatbot excels in natural language understanding (NLU). It captures complex queries, analyzes context, and dynamically retrieves relevant data to formulate comprehensive responses. This feature enhances customer support, knowledge management, and research workflows by offering a more interactive and informative conversation experience.
+			</p>
+			<p>
+			  By combining retrieval with generation, the chatbot can accurately answer questions that require detailed knowledge from external resources, avoiding hallucinations and improving reliability.
+			</p>
+		  
+			<h3>Customizable Responses & Alerts</h3>
+			<p>
+			  RAG Chatbot allows for extensive customization of its response generation. Configure how the chatbot retrieves and displays data to match specific operational needs or industry standards. You can also set up custom alerts that notify users of relevant updates or insights in real time based on specific triggers within the conversation.
+			</p>
+			<p>
+			  Additionally, the alert system helps prioritize urgent information, ensuring critical data is surfaced immediately for time-sensitive queries or operational requirements.
+			</p>
+			<p>
+			  Our alert management features track response histories and support fine-tuned responses for improved user interactions over time.
+			</p>
+    </div>    
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product1.png"
+				alt="GOM Monitoring Interface"
+				loading="lazy"
+			/>
+		</picture>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product2.png"
+				alt="GOM Analytics Dashboard"
+				loading="lazy"
+			/>
+		</picture>
+    <picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product1.png"
+				alt="GOM Monitoring Interface"
+				loading="lazy"
+			/>
+		</picture>
+
+	</StickyTextImageSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded />
+
+	<CtaCardSection
+		background="var(--theme-surface-2)"
+		color="var(--theme-on-surface-2)"
+	>
+		<h2>Get Started with VBOT Today</h2>
+		<p>
+			Revolutionize how you interact with data. Try RAG Chatbot and experience real-time, retrieval-enhanced conversations that optimize decision-making and enhance user engagement.
+		</p>
+		<Button href="/get-started" customIcon>
+			Get Started <Fragment slot="icon">
+				<Icon name="ic:baseline-chevron-right" />
+			</Fragment>
+		</Button>
+	</CtaCardSection>
+</Layout>

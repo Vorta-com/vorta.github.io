@@ -1,0 +1,112 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from './Page.astro'; 
+import { generateTagData } from '../utils/helpers';
+
+const {content: {title, description, publishDate, canonicalURL, featuredImage, tags} } = Astro.props;
+
+let allTagsData = [];
+
+if(tags && tags.length > 0){
+  allTagsData = generateTagData(tags);
+}
+
+const seo = {
+	title,
+	description,
+  publishDate,
+	canonicalURL,
+	image: featuredImage,
+};
+---
+<Layout seo={seo}> 
+  <div class="post-header__container"> 
+    <ul class="post-tags__list">
+      {allTagsData.map(tag => (
+        <li class="post-tags__tag">
+          <a href={`/blog/tags/${tag.slug}`}>
+            {tag.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <h1>{title}</h1>
+    <p class="post-layout__date">
+      <time><em>{publishDate}</em></time>
+    </p>
+    {featuredImage && <img class="post-layout__img" src={featuredImage} alt={title} />}
+  </div>
+  <div>  
+    <article id="article">
+        <slot></slot>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  /* Center the article */
+  #article {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 800px; /* Limit the width for readability */
+    margin: 0 auto; /* Center the article */
+    text-align: justify;
+  }
+  
+  
+
+  /* Ensure the post header is centered */
+  .post-header__container {
+    margin: 1rem auto; /* Center the header */
+    padding: var(--container-padding);
+    text-align: center; /* Ensure content is centered */
+  }
+
+  .post-header__container h1 {
+    margin: 1rem auto; /* Center the header */
+    max-width: 1200px; /* Limit the width for readability */
+    padding: var(--container-padding);
+    text-align: center; /* Ensure content is centered */
+  }
+
+  /* Style the tags list and center it */
+  .post-tags__list {
+    margin: 1rem auto;
+    padding: 0;
+    list-style: none;
+    text-align: center; /* Center the tags */
+  }
+
+  .post-tags__tag {
+    display: inline-block; /* Ensure the tags are displayed inline */
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .post-tags__tag a {
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  /* Center the featured image */
+  .post-layout__img {
+    max-width: 800px; /* Limit the width for readability */
+    display: block; /* Ensure the image is centered */
+    margin: 1rem auto; /* Apply margin for centering */
+    border-radius: var(--theme-shape-radius);
+  }
+
+  /* Style the publish date and center it */
+  .post-layout__date {
+    margin-bottom: 1rem;
+    opacity: 0.84;
+    text-align: center; /* Ensure the date is centered */
+  }
+
+  /* Container-specific styling to ensure content is centered */
+  .Container {
+    max-width: 800px; /* Adjust max width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem; /* Add padding for spacing */
+  }
+</style>

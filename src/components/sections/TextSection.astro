@@ -1,0 +1,40 @@
+---
+import Container from '../core/Container.astro';
+
+const { narrow } = Astro.props;
+---
+
+<Container narrow={narrow}>
+  <section class="text__section">
+    <slot></slot>
+  </section>
+</Container>
+
+<style>
+  .text__section {
+    margin: var(--section-margin) auto;
+    text-align: justify;
+    max-width: 1200px;
+    padding: 0 1rem; /* Added padding on both sides */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* A clean, professional font */
+    line-height: 1.6; /* Improved readability */
+    font-size: 1rem; /* Adjusted font size for better appearance */
+    color: #333; /* Darker text for a more professional look */
+  }
+
+  .text__section p {
+    padding: 1rem; /* Padding around text */
+    margin-bottom: 1rem; /* Space between paragraphs */
+    border-radius: 4px; /* Rounded corners */
+  }
+
+  .text__section p:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Light background color for odd paragraphs */
+  }
+
+  .text__section p:nth-of-type(even) {
+    background-color: #e0e0e0; /* Slightly darker background color for even paragraphs */
+  }
+</style>

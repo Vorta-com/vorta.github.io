@@ -1,0 +1,123 @@
+---
+import { Icon } from 'astro-icon/components';
+import {
+	AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+} from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import TextAndImageHero from '../../components/sections/heros/TextAndImageHero.astro';
+import ProductTitle from '@components/sections/heros/ProductTitle.astro';
+
+const seo = {
+	title: 'GOM - Global Monitorization System | Astro Odyssey Theme',
+	description: 'Discover GOM, the ultimate solution for comprehensive monitoring of your third-party services.',
+};
+---
+
+<!-- <AnnouncementBar
+	text="Check out our latest blog post on effective monitoring strategies!"
+	href="/blog/posts/effective-monitoring-strategies/"
+	slot="announcement-bar"
+/> -->
+
+<Layout {seo}>
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>Welcome to GOM</h1>
+			<p>Effortlessly monitor and manage all your third-party services from a unified dashboard.</p>
+		</div>
+		<div slot="btns-container">
+			<Button>
+				Explore Features Below<Fragment slot="icon">
+					<Icon name="ic:baseline-chevron-right" />
+				</Fragment>
+			</Button>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-hero-1.jpg"
+				alt="GOM Dashboard"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
+
+  <ProductTitle >
+		<h2>Key Features of GOM</h2>
+	</ProductTitle>
+
+	<StickyTextImageSection id="pt">
+		<div slot="text-container">
+      <h3>Real-Time Monitoring</h3>
+      <p>
+        GOM excels in providing comprehensive real-time monitoring for all your connected services. Our advanced system continuously tracks performance metrics, service uptime, and system health, ensuring you stay informed about the status of your operations at all times. Receive instant notifications through multiple channels, including email, SMS, and in-app alerts, to address any issues promptly and keep your operations running smoothly.
+      </p>
+      <p>
+        Our real-time monitoring includes customizable dashboards that display key metrics and performance indicators in a user-friendly format. This allows you to quickly identify trends, spot potential issues, and take proactive measures before problems escalate.
+      </p>
+    
+      <h3>Comprehensive Insights</h3>
+      <p>
+        With GOM, you gain access to deep, actionable insights into your service performance and system health. Our analytics engine aggregates data from various sources, providing you with a holistic view of your infrastructure. Detailed reports and visualizations highlight performance trends, bottlenecks, and areas for improvement.
+      </p>
+      <p>
+        Our intuitive dashboards offer interactive features, allowing you to drill down into specific data points and generate customized reports. This helps you make informed decisions based on real-time data and historical trends, optimizing your workflows and enhancing overall operational efficiency.
+      </p>
+    
+      <h3>Customizable Alerts</h3>
+      <p>
+        GOM's alert system is designed to keep you informed about critical issues with maximum flexibility. You can configure alerts based on specific thresholds, events, or system states, ensuring you receive notifications that are relevant to your needs.
+      </p>
+      <p>
+        Choose from various notification methods, including email, SMS, and push notifications, and set up alert preferences to match your operational priorities. Our system supports complex alerting rules, allowing you to define conditions for when and how alerts are triggered, ensuring that you are always in control and never miss crucial updates.
+      </p>
+      <p>
+        Additionally, our alert management tools enable you to track alert history, acknowledge and resolve issues, and review past incidents to improve your monitoring strategy over time.
+      </p>
+    </div>    
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product1.png"
+				alt="GOM Monitoring Interface"
+				loading="lazy"
+			/>
+		</picture>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product2.png"
+				alt="GOM Analytics Dashboard"
+				loading="lazy"
+			/>
+		</picture>
+    <picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/Product1.png"
+				alt="GOM Monitoring Interface"
+				loading="lazy"
+			/>
+		</picture>
+
+	</StickyTextImageSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded />
+
+	<CtaCardSection
+		background="var(--theme-surface-2)"
+		color="var(--theme-on-surface-2)"
+	>
+		<h2>Get Started with GOM Today</h2>
+		<p>
+			Transform how you monitor and manage your services. Try GOM and experience a new level of operational efficiency and control.
+		</p>
+		<Button href="/get-started" customIcon>
+			Get Started <Fragment slot="icon">
+				<Icon name="ic:baseline-chevron-right" />
+			</Fragment>
+		</Button>
+	</CtaCardSection>
+</Layout>
