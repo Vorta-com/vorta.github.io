@@ -9,11 +9,11 @@ export const nav = [
 	},
 	{
 		title: 'GOM',
-		slug: '/product/product-2',
+		slug: '/product/gom',
 	},
 	{
 		title: 'VBot',
-		slug: '/product/product-1',
+		slug: '/product/vbot',
 	},
 	{
 		title: 'Blog',
